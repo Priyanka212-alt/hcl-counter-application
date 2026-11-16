@@ -10,10 +10,15 @@ app.use(express.json());
 
 let count = 0;
 
+app.get('/', (req, res) => {
+    res.send('Counter Application Backend is Running!');
+});
+
 // Get counter value
 app.get('/count', (req, res) => {
     res.json({ count });
 });
+
 
 // Increment counter
 app.post('/increment', (req, res) => {
